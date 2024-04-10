@@ -15,18 +15,34 @@
             font-size: 24px;
             color: #333;
         }
+        .gambar {
+            margin-top: 20px;
+            max-width: 300px;
+        }
     </style>
 </head>
 <body>
     <div class="ucapan" id="ucapan1">Minal Aidizin Wal Fadzin Kontol</div>
     <div class="ucapan" id="ucapan2" style="display:none;">Gua Gada Duit Tai</div>
+    <div class="ucapan" id="ucapan3" style="display:none;">Kirim aja lah ke gua lewat dana</div>
+    <img class="gambar" id="gambar" src="https://github.com/racommit/giftTHR/blob/e7d4edee633b33593a73326fd4f517b79a90a1aa/IMG_20240410_090702.jpg" style="display:none;">
+    <div id="countdown" style="display:none;"></div>
 
     <script>
-        // Menampilkan tulisan pertama selama 5 detik
-        setTimeout(function() {
-            document.getElementById("ucapan1").style.display = "none";
-            document.getElementById("ucapan2").style.display = "block";
-        }, 5000); // 5000 milidetik = 5 detik
+        // Menampilkan countdown selama 5 detik sebelum menampilkan tulisan kedua
+        var timeleft = 5;
+        var countdown = setInterval(function(){
+            document.getElementById('countdown').innerHTML = "Countdown: " + timeleft + " detik";
+            timeleft -= 1;
+            if(timeleft <= 0){
+                clearInterval(countdown);
+                document.getElementById("ucapan1").style.display = "none";
+                document.getElementById("ucapan2").style.display = "block";
+                document.getElementById('countdown').style.display = "none";
+                document.getElementById("ucapan3").style.display = "block";
+                document.getElementById("gambar").style.display = "block";
+            }
+        }, 1000);
     </script>
 </body>
 </html>
