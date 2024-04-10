@@ -18,6 +18,15 @@
     </style>
 </head>
 <body>
-    <div class="ucapan">Minal Aidizin Wal Fadzin Kontol</div>
+    <div class="ucapan" id="ucapan1">Minal Aidizin Wal Fadzin Kontol</div>
+    <div class="ucapan" id="ucapan2" style="display:none;">Gua Gada Duit Tai</div>
+
+    <script>
+        // Menampilkan tulisan pertama selama 5 detik
+        setTimeout(function() {
+            document.getElementById("ucapan1").style.display = "none";
+            document.getElementById("ucapan2").style.display = "block";
+        }, 5000); // 5000 milidetik = 5 detik
+    </script>
 </body>
 </html>
